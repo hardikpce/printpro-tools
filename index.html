@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PrintPro Tools — Photo, PDF & Print Tools</title>
+<meta name="description" content="Fast online photo, PDF and print-layout tools for students, individuals and print shops.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#"><span class="logo">P</span><span>PrintPro<span class="accent">Tools</span></span></a>
+    <nav class="desktop">
+      <a href="#tools">Tools</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions"><button class="ghost" onclick="openLogin()">Login</button><button class="primary" onclick="openJoin()">Join Free</button></div>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#tools">Tools</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="pill">⚡ Fast • Simple • Browser based</div>
+      <h1>All your <span>printing work</span> in one place.</h1>
+      <p class="lead">Resize photos, create passport-size sheets, arrange documents for printing, and manage everyday PDF work — directly in your browser.</p>
+      <div class="search"><span>⌕</span><input id="search" placeholder="Search tools, forms, files..." oninput="filterTools()"><kbd>Ctrl K</kbd></div>
+      <div class="hero-buttons"><a class="primary big" href="#tools">Explore Tools →</a><button class="secondary big" onclick="openUpload()">Try a tool</button></div>
+      <div class="trust"><span>✓ No heavy software</span><span>✓ Mobile friendly</span><span>✓ Privacy focused</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="mock-head"><span>Quick Tools</span><span class="dot">● ● ●</span></div>
+      <div class="mock-grid">
+        <button onclick="useTool('Passport Photo')">📷<b>Passport Photo</b><small>3.5 × 4.5 cm</small></button>
+        <button onclick="useTool('Photo Resize')">↔️<b>Photo Resize</b><small>Pixels / KB</small></button>
+        <button onclick="useTool('JPG to PDF')">📄<b>JPG to PDF</b><small>Make PDF</small></button>
+        <button onclick="useTool('Print Layout')">🖨️<b>Print Layout</b><small>A4 sheet</small></button>
+      </div>
+      <div class="mock-footer">Everything you need for everyday print work.</div>
+    </div>
+  </div>
+</section>
+
+<section id="tools" class="section">
+<div class="container">
+  <div class="section-title"><div><span class="eyebrow">TOOLBOX</span><h2>Popular tools</h2></div><span id="toolCount" class="muted">12 tools</span></div>
+  <div id="toolGrid" class="tool-grid">
+    <article class="tool" data-name="passport photo"><div class="icon purple">📷</div><h3>Passport Photo</h3><p>Create standard passport-size photo sheets.</p><button onclick="useTool('Passport Photo')">Open tool →</button></article>
+    <article class="tool" data-name="photo resize"><div class="icon blue">↔️</div><h3>Photo Resize</h3><p>Resize by pixels, dimensions or target KB.</p><button onclick="useTool('Photo Resize')">Open tool →</button></article>
+    <article class="tool" data-name="photo crop"><div class="icon green">✂️</div><h3>Photo Crop</h3><p>Crop images to your required ratio.</p><button onclick="useTool('Photo Crop')">Open tool →</button></article>
+    <article class="tool" data-name="jpg to pdf"><div class="icon orange">JPG</div><h3>JPG to PDF</h3><p>Turn one or more images into a PDF.</p><button onclick="useTool('JPG to PDF')">Open tool →</button></article>
+    <article class="tool" data-name="merge pdf"><div class="icon red">PDF</div><h3>Merge PDF</h3><p>Combine multiple PDF files into one.</p><button onclick="useTool('Merge PDF')">Open tool →</button></article>
+    <article class="tool" data-name="pdf to jpg"><div class="icon pink">↪</div><h3>PDF to JPG</h3><p>Convert PDF pages into image files.</p><button onclick="useTool('PDF to JPG')">Open tool →</button></article>
+    <article class="tool" data-name="id card print"><div class="icon indigo">🪪</div><h3>ID Card Print</h3><p>Arrange an existing card image for printing.</p><button onclick="useTool('ID Card Print')">Open tool →</button></article>
+    <article class="tool" data-name="a4 print layout"><div class="icon teal">🖨️</div><h3>A4 Print Layout</h3><p>Place images and documents on an A4 sheet.</p><button onclick="useTool('A4 Print Layout')">Open tool →</button></article>
+    <article class="tool" data-name="resume maker"><div class="icon violet">📋</div><h3>Resume Maker</h3><p>Create a clean printable resume.</p><button onclick="useTool('Resume Maker')">Open tool →</button></article>
+    <article class="tool" data-name="biodata maker"><div class="icon cyan">📝</div><h3>Biodata Maker</h3><p>Build a simple professional biodata.</p><button onclick="useTool('Biodata Maker')">Open tool →</button></article>
+    <article class="tool" data-name="png to jpg"><div class="icon yellow">PNG</div><h3>PNG to JPG</h3><p>Convert transparent PNG images to JPG.</p><button onclick="useTool('PNG to JPG')">Open tool →</button></article>
+    <article class="tool" data-name="document crop"><div class="icon slate">▣</div><h3>Document Crop</h3><p>Crop an existing document image for printing.</p><button onclick="useTool('Document Crop')">Open tool →</button></article>
+  </div>
+</div>
+</section>
+
+<section id="features" class="section soft">
+<div class="container">
+  <div class="center"><span class="eyebrow">WHY PRINTPRO</span><h2>Made for everyday digital work</h2><p class="lead">A clean toolkit for individuals, students, cyber cafes and print shops.</p></div>
+  <div class="feature-grid">
+    <div class="feature"><span>⚡</span><h3>Simple & fast</h3><p>Open a tool, select your file and get straight to the result.</p></div>
+    <div class="feature"><span>📱</span><h3>Works on mobile</h3><p>Responsive layouts designed for phones, tablets and desktops.</p></div>
+    <div class="feature"><span>🔒</span><h3>Privacy focused</h3><p>Keep sensitive documents under your control and avoid permanent storage by default.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="pricing" class="section">
+<div class="container">
+<div class="center"><span class="eyebrow">PLANS</span><h2>Start free</h2><p class="lead">Use the basic toolbox now. Add paid limits and accounts later.</p></div>
+<div class="pricing">
+ <div class="price-card"><h3>Free</h3><div class="price">₹0 <small>/ forever</small></div><ul><li>✓ Basic photo tools</li><li>✓ PDF utilities</li><li>✓ A4 print layouts</li><li>✓ Mobile access</li></ul><button class="secondary" onclick="openJoin()">Get Started</button></div>
+ <div class="price-card featured"><span class="popular">POPULAR</span><h3>Pro</h3><div class="price">₹99 <small>/ month</small></div><ul><li>✓ Higher usage limits</li><li>✓ Saved projects</li><li>✓ Premium templates</li><li>✓ Priority support</li></ul><button class="primary" onclick="alert('Connect your payment gateway here.')">Choose Pro</button></div>
+</div>
+</div>
+</section>
+
+<section id="faq" class="section soft">
+<div class="container faq"><div class="center"><span class="eyebrow">FAQ</span><h2>Questions, answered</h2></div>
+<details><summary>Can I use these tools on my phone?</summary><p>Yes. This starter site is responsive and works on modern mobile browsers.</p></details>
+<details><summary>Are government documents created or verified here?</summary><p>No. The site is for preparing user-provided files, photos and print layouts. It should not claim to issue or authenticate government documents.</p></details>
+<details><summary>Can I add more tools later?</summary><p>Yes. The project is structured so new tools can be added as separate pages or modules.</p></details>
+</div></section>
+</main>
+
+<footer><div class="container footer-grid"><div><a class="brand" href="#"><span class="logo">P</span><span>PrintPro<span class="accent">Tools</span></span></a><p>Online tools for photos, PDFs and everyday print work.</p></div><div><b>Tools</b><a href="#tools">Photo Tools</a><a href="#tools">PDF Tools</a><a href="#tools">Print Layouts</a></div><div><b>Company</b><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#">Privacy</a></div></div><div class="copyright">© 2026 PrintPro Tools. Independent digital-tools platform.</div></footer>
+
+<div id="toolModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+<script src="app.js"></script>
+</body></html>
